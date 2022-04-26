@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Form, Input, Message, Button } from 'semantic-ui-react';
+import { Form, Input, Message, Button, Label } from 'semantic-ui-react';
 import Campaign from '../../../ethereum/campaign';
 import web3 from '../../../ethereum/web3';
 import Layout from '../../../components/Layout';
 import { Link, Router } from '../../../routes'
+import Labels from '../../../labels.json'
 
 class RequestNew extends Component {
     static async getInitialProps(props) {
@@ -45,25 +46,25 @@ class RequestNew extends Component {
         return (
             <Layout>
                 <Link route={`/campaigns/${this.props.address}/requests`}>
-                    <a>Back</a>
+                    <a>{Labels.back}</a>
                 </Link>
-                <h3>Create a Request</h3>
+                <h3>{Labels.createRequest}</h3>
                 <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
-                    <label>Description</label>
+                    <label>{Labels.description}</label>
                     <Form.Field>
                         <Input 
                             value={this.state.description}
                             onChange={event => this.setState({ description: event.target.value })}
                         />
                     </Form.Field>
-                    <label>Amount in Ether</label>
+                    <label>{Labels.amountInEther}</label>
                     <Form.Field>
                         <Input 
                             value={this.state.value}
                             onChange={event => this.setState({ value: event.target.value })}
                         />
                     </Form.Field>
-                    <label>Recipient</label>
+                    <label>{Labels.recipient}</label>
                     <Form.Field>
                         <Input 
                             value={this.state.recipient}
@@ -72,7 +73,7 @@ class RequestNew extends Component {
                     </Form.Field>
 
                     <Message error header="Oops!" content={this.state.errorMessage} />
-                    <Button loading={this.state.loading} primary>Create!</Button>
+                    <Button loading={this.state.loading} primary>{Labels.create}</Button>
                 </Form>
             </Layout>
         );

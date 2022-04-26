@@ -1,0 +1,23 @@
+{
+    "viewCampaign" : "View Campaign",
+    "openCampaigns" : "Open Campaigns",
+    "createCampaign" : "Create a Campaign",
+    "minimumContribution" : "Minimum Contribution",
+    "campaignDetails" : "Campaign Details",
+    "viewRequests" : "View Requests",
+    "requestList" : "Request List",
+    "addRequest" : "Add Request",
+    "id" : "Id",
+    "description" : "Description",
+    "amount" : "Amount",
+    "recipient" : "Recipient",
+    "approvalCount" : "Approval Count",
+    "approve" : "Approve",
+    "finalize" : "Finalize",
+    "back" : "Back",
+    "amountInEther" : "Amount in Ether",
+    "create" : "Create",
+    "createRequest" : "Create Request",
+    "inWei" : "in Wei",
+    "oops" : "Oops!"
+}

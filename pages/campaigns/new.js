@@ -4,6 +4,7 @@ import { Form, Button, Input, Message } from 'semantic-ui-react';
 import factory from '../../ethereum/factory'
 import web3 from "../../ethereum/web3";
 import { Router } from '../../routes';
+import Labels from '../../labels.json'
 
 class CampaignNew extends Component {
     state = {
@@ -35,20 +36,20 @@ class CampaignNew extends Component {
     render() {
         return(
             <Layout>
-                <h3>Create a Campaign</h3>
+                <h3>{Labels.createCampaign}</h3>
 
                 <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
                     <Form.Field>
-                        <label>Minimum Contribution</label>
+                        <label>{Labels.minimumContribution}</label>
                         <Input 
-                            label="in wei" 
+                            label={Labels.inWei} 
                             labelPosition="right"
                             value={this.state.minimumContribution}
                             onChange={event => this.setState({ minimumContribution: event.target.value })} />
                     </Form.Field>
-                    <Message error header="Oops!" content={this.state.errorMessage} />
+                    <Message error header={Labels.oops} content={this.state.errorMessage} />
 
-                    <Button loading={this.state.loading} primary>Create</Button>
+                    <Button loading={this.state.loading} primary>{Labels.create}</Button>
                 </Form>
             </Layout>
         )

@@ -4,6 +4,7 @@ import { Link } from '../../../routes';
 import Layout from '../../../components/Layout';
 import Campaign from '../../../ethereum/campaign';
 import RequestRow from '../../../components/RequestRow';
+import Labels from '../../../labels.json'
 
 class RequestIndex extends Component {
     static async getInitialProps(props) {
@@ -38,24 +39,24 @@ class RequestIndex extends Component {
 
         return (
             <Layout>
-                <h3>Request List</h3>
+                <h3>{Labels.requestList}</h3>
 
                 <Link route={`/campaigns/${this.props.address}/requests/new`}>
                     <a>
-                        <Button primary floated='right' style={{ marginBottom: 10}}>Add Request</Button>
+                        <Button primary floated='right' style={{ marginBottom: 10}}>{Labels.addRequest}</Button>
                     </a>
                 </Link>
 
                 <Table>
                     <Header>
                         <Row>
-                            <HeaderCell>ID</HeaderCell>
-                            <HeaderCell>Description</HeaderCell>
-                            <HeaderCell>Amount</HeaderCell>
-                            <HeaderCell>Recipient</HeaderCell>
-                            <HeaderCell>Approval Count</HeaderCell>
-                            <HeaderCell>Approve</HeaderCell>
-                            <HeaderCell>Finalize</HeaderCell>
+                            <HeaderCell>{Labels.id}</HeaderCell>
+                            <HeaderCell>{Labels.description}</HeaderCell>
+                            <HeaderCell>{Labels.amount}</HeaderCell>
+                            <HeaderCell>{Labels.recipient}</HeaderCell>
+                            <HeaderCell>{Labels.approvalCount}</HeaderCell>
+                            <HeaderCell>{Labels.approve}</HeaderCell>
+                            <HeaderCell>{Labels.finalize}</HeaderCell>
                         </Row>
                     </Header>
                     <Body>

@@ -5,6 +5,7 @@ import { Card, Grid, Button } from 'semantic-ui-react'
 import web3 from "../../ethereum/web3";
 import ContributeForm from "../../components/ContributeForm";
 import { Link } from '../../routes'
+import Labels from '../../labels.json'
 
 class CampaignShow extends Component {
 
@@ -65,7 +66,7 @@ class CampaignShow extends Component {
     render() {
         return (
             <Layout>
-                <h3>Campaign Details</h3>
+                <h3>{Labels.campaignDetails}</h3>
                 <Grid>
                     <Grid.Row>
                         <Grid.Column width={10}>
@@ -81,7 +82,7 @@ class CampaignShow extends Component {
                         <Grid.Column>
                             <Link route={`/campaigns/${this.props.address}/requests`}>
                                 <a>
-                                    <Button primary>View Requests</Button>
+                                    <Button primary>{Labels.viewRequests}</Button>
                                 </a>
                             </Link>
                         </Grid.Column>
